@@ -6,15 +6,70 @@ box-sizing: border-box;
 
 body {
  font-family: 'Muli, sans-serif';
- background-color: rgb(201, 231, 148);
+ background-color: rgb(198, 207, 182);
  margin: 0;
  display: flex;
  align-items: center;
  justify-content: center;
  height: 100vh;
  overflow:hidden
-
+ 
 }
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color:  #e2d8b1; 
+    padding: 20px 10px;
+    padding-top: 20px;
+  }
+  
+  /* Style the header links */
+  .header a {
+    float: left;
+    color: rgb(40, 65, 33);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    padding-bottom: 30;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: #bcd1b4;
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: rgb(165, 243, 233);
+    color:  #494949;
+  }
+  
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
 
 .container {
     display: flex;
@@ -27,7 +82,7 @@ background-position: center;
 background-repeat: no-repeat;
 height: 80vh;
 border-radius: 40px;
-color: rgb(114, 117, 74);
+color: rgb(141, 146, 50);
 cursor: pointer;
 flex: 0.5;
 margin: 10px;
@@ -47,10 +102,11 @@ transition: flex 0.7s ease-in;
 
 .panel.active {
     flex: 5;
-    border-radius: 40px;
+    border-radius: 60px;
 }
 
 .panel.active h3 {
+    border-radius: 60px;
   opacity: 1;
   transition: flex 0.3s ease-in 0.4s;
 }
@@ -59,7 +115,6 @@ transition: flex 0.7s ease-in;
     .container{
         width: 100vw;
     }
-
     .panel:nth-last-of-type(4),
     .panel:nth-last-of-type(5) {
     display: none;
